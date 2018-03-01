@@ -58,6 +58,7 @@ mongoose.connect(dburl, function(err) {
 });
 
 require('../models/Product');
+require('../models/Engy');
 require('../models/users');
 
 require('../models/Member');

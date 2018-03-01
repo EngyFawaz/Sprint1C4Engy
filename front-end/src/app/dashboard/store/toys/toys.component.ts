@@ -6,7 +6,6 @@ import { ToysService } from './toys.service'
   template: '<ng2-smart-table [settings]="settings" [source]="data" (createConfirm)="onCreateCall($event)" (editConfirm)="onEditCall($event)" ></ng2-smart-table>',
   providers: [ToysService]
 })
-// <ng2-smart-table [settings]="settings"></ng2-smart-table>
 export class ToysComponent implements OnInit {
   settings = {
     add: {
@@ -40,14 +39,14 @@ export class ToysComponent implements OnInit {
   }
   onCreateCall(event){
        event.confirm.resolve(event.newData);
-       this.toysService.createProduct(event.newData.name, event.newData.price, event.newData.sellername).subscribe();
+       this.toysService.createEngy(event.newData.name, event.newData.price, event.newData.sellername).subscribe();
   }
   onEditCall(event){
        event.confirm.resolve(event.newData);
-       this.toysService.updateProduct(event.newData.name, event.newData.price).subscribe();
+       this.toysService.updateEngy(event.newData.name, event.newData.price).subscribe();
   }
   ngOnInit() {
-    this.toysService.getProducts().subscribe(
+    this.toysService.getEngy().subscribe(
       (res: Response) => {
         console.log(res.data)
         this.data = res.data;

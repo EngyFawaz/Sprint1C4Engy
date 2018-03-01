@@ -2,6 +2,10 @@ var express = require('express'),
   router = express.Router(),
   ProductCtrl = require('../controllers/ProductController');
 
+  var express = require('express'),
+  router = express.Router(),
+  EngyCtrl = require('../controllers/EngyController');
+
   const authentication = require('../controllers/authentication')(router);
   app = express();
 	memberCtrl = require('../controllers/MemberController');
@@ -17,6 +21,17 @@ router.get(
 router.post('/Product/createProduct', ProductCtrl.createProduct);
 router.patch('/Product/updateProduct/:ProductId', ProductCtrl.updateProduct);
 router.delete('/Product/deleteProduct/:ProductId', ProductCtrl.deleteProduct);
+
+//-------------------------------Engy Routes-----------------------------------
+router.get('/Engy/getEngy', EngyCtrl.getEngy);
+router.get('/Engy/getEngy/:EngyId', EngyCtrl.getEngy);
+router.get(
+  '/Engy/getEngyBelowPrice/:price',
+  EngyCtrl.getEngyBelowPrice
+);
+router.post('/Engy/createEngy', EngyCtrl.createEngy);
+router.patch('/Engy/updateEngy/:EngyId', EngyCtrl.updateEngy);
+router.delete('/Engy/deleteEngy/:EngyId', EngyCtrl.deleteEngy);
 
 
 app.use('/authentication' , authentication);

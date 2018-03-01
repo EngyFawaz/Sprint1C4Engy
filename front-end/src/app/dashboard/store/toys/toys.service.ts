@@ -7,16 +7,16 @@ export class ToysService {
 
   constructor(private httpClient: HttpClient) { }
 
-  createProduct(name:string, price:number, sellername: String) {
-    return this.httpClient.post(environment.apiUrl + 'Product/createProduct', {'name':name, 'price':price , 'sellername':sellername});
+  createEngy(name:string, price:number, sellername: String) {
+    return this.httpClient.post(environment.apiUrl + 'Engy/createEngy', {'name':name, 'price':price , 'sellername':sellername});
   }
 
-  getProducts(){
-    return this.httpClient.get(environment.apiUrl + 'Product/getProducts');
+  getEngy(){
+    return this.httpClient.get(environment.apiUrl + 'Engy/getEngy');
   }
 
-  updateProduct(name:string, price:number) {
-    return this.httpClient.patch(environment.apiUrl + 'Product/updateProduct/:ProductId', {'name':name,'price':price});
+  updateEngy(name:string, price:number) {
+    return this.httpClient.patch(environment.apiUrl + 'Engy/updateEngy/:EngyId', {'name':name,'price':price});
   }
 
 }
