@@ -3,7 +3,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ToysService } from './toys.service'
 @Component({
   selector: 'app-toys',
-  template: '<ng2-smart-table [settings]="settings" [source]="data" (createConfirm)="onCreateCall($event)" (editConfirm)="onEditCall($event)" ></ng2-smart-table>',
+  template: '<ng2-smart-table [settings]="settings" [source]="data" (createConfirm)="onCreateCall($event)" (editConfirm)="onEditCall($event)" (deleteConfirm)="onDeleteCall($event)" ></ng2-smart-table>',
   providers: [ToysService]
 })
 export class ToysComponent implements OnInit {
@@ -13,6 +13,9 @@ export class ToysComponent implements OnInit {
     },
     edit: {
       confirmSave: true,
+    },
+    delete:{
+      confirmDelete: true,
     },
     columns: {
       name: {
