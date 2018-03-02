@@ -50,9 +50,10 @@ export class ToysComponent implements OnInit {
   }
   ngOnInit() {
     this.toysService.getEngy().subscribe(
-      (res: Response) => {
-        console.log(res.data)
-        this.data = res.data;
+      (res: any) => {
+       // console.log(res.data)
+       if(res.hasOwnProperty('data')){
+        this.data = res.data;}
       }
     );
    }
