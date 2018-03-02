@@ -35,7 +35,7 @@ module.exports.getEngy = function(req, res, next) {
     }
     res.status(200).json({
       err: null,
-      msg: 'Products retrieved successfully.',
+      msg: 'Engys retrieved successfully.',
       data: Engy
     });
   });
@@ -60,7 +60,7 @@ module.exports.getEngyBelowPrice = function(req, res, next) {
     res.status(200).json({
       err: null,
       msg:
-        'Products priced below ' +
+        'Engys priced below ' +
         req.params.price +
         ' retrieved successfully.',
       data: Engy
@@ -96,7 +96,7 @@ module.exports.createEngy = function(req, res, next) {
     }
     res.status(201).json({
       err: null,
-      msg: 'Product was created successfully.',
+      msg: 'Engy was created successfully.',
       data: Engy
     });
   });
@@ -106,7 +106,7 @@ module.exports.updateEngy = function(req, res, next) {
   if (!Validations.isObjectId(req.params.EngyId)) {
     return res.status(422).json({
       err: null,
-      msg: 'ProductId parameter must be a valid ObjectId.',
+      msg: 'EngyId parameter must be a valid ObjectId.',
       data: null
     });
   }
@@ -139,11 +139,11 @@ module.exports.updateEngy = function(req, res, next) {
     if (!updatedEngy) {
       return res
         .status(404)
-        .json({ err: null, msg: 'Product not found.', data: null });
+        .json({ err: null, msg: 'Engy not found.', data: null });
     }
     res.status(200).json({
       err: null,
-      msg: 'Product was updated successfully.',
+      msg: 'Engy was updated successfully.',
       data: updatedEngy
     });
   });
@@ -153,7 +153,7 @@ module.exports.deleteEngy = function(req, res, next) {
   if (!Validations.isObjectId(req.params.EngyId)) {
     return res.status(422).json({
       err: null,
-      msg: 'ProductId parameter must be a valid ObjectId.',
+      msg: 'EngyId parameter must be a valid ObjectId.',
       data: null
     });
   }
@@ -167,11 +167,11 @@ module.exports.deleteEngy = function(req, res, next) {
     if (!deletedEngy) {
       return res
         .status(404)
-        .json({ err: null, msg: 'Product not found.', data: null });
+        .json({ err: null, msg: 'Engy not found.', data: null });
     }
     res.status(200).json({
       err: null,
-      msg: 'Product was deleted successfully.',
+      msg: 'Engy was deleted successfully.',
       data: deletedEngy
     });
   });
