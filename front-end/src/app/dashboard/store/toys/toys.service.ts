@@ -15,8 +15,12 @@ export class ToysService {
     return this.httpClient.get(environment.apiUrl + 'Engy/getEngy');
   }
 
-  updateEngy(name:string, price:number) {
-    return this.httpClient.patch(environment.apiUrl + 'Engy/updateEngy/:EngyId', {'name':name,'price':price});
+  updateEngy(id:object, name:string, price:number) {
+    return this.httpClient.patch(environment.apiUrl + 'Engy/updateEngy/'+id,{'name':name, 'price':price});
+  }
+
+  deleteEngy(id:object){
+    return this.httpClient.delete(environment.apiUrl+ 'Engy/deleteEngy/'+id);
   }
 
 }

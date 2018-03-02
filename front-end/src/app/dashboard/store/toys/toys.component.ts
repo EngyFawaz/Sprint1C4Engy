@@ -45,9 +45,15 @@ export class ToysComponent implements OnInit {
        this.toysService.createEngy(event.newData.name, event.newData.price,event.newData.component,event.newData.seller).subscribe();
   }
   onEditCall(event){
-       event.confirm.resolve(event.newData);
-       this.toysService.updateEngy(event.newData.name, event.newData.price).subscribe();
-  }
+    event.confirm.resolve(event.newData);
+    this.toysService.updateEngy(event.newData._id, event.newData.name, event.newData.price).subscribe();
+}
+
+onDeleteCall(event){
+ event.confirm.resolve(event.data._id);
+ console.log(event.data._id);
+ this.toysService.deleteEngy(event.data._id).subscribe();
+}
   ngOnInit() {
     this.toysService.getEngy().subscribe(
       (res: any) => {
