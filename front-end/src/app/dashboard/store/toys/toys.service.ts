@@ -7,8 +7,8 @@ export class ToysService {
 
   constructor(private httpClient: HttpClient) { }
 
-  createEngy(name:string, price:number, sellername: String) {
-    return this.httpClient.post(environment.apiUrl + 'Engy/createEngy', {'name':name, 'price':price , 'sellername':sellername});
+  createEngy(name:string, price:number, component:String , seller: String) {
+    return this.httpClient.post(environment.apiUrl + 'Engy/createEngy', {'name':name, 'price':price ,'component': component, 'seller':seller});
   }
 
   getEngy(){

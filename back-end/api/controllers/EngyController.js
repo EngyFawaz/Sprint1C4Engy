@@ -74,8 +74,11 @@ module.exports.createEngy = function(req, res, next) {
     Validations.isString(req.body.name) &&
     req.body.price &&
     Validations.isNumber(req.body.price);
-    req.body.sellerName &&
-    Validations.isString(req.body.sellerName);
+    req.body.component &&
+    Validations.isString(req.body.component);
+    req.body.seller &&
+    Validations.isString(req.body.seller);
+    
   if (!valid) {
     return res.status(422).json({
       err: null,

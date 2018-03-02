@@ -21,11 +21,17 @@ var Engychema = mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  sellername:{
+  component: {
     type: String,
     trim: true,
     lowercase: true,
-    //required: true
+    required: true
+  },
+  seller:{
+    type: String,
+    trim: true,
+    lowercase: true,
+    required: true
   }
   
 });

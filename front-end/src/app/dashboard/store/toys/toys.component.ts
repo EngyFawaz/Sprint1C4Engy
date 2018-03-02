@@ -27,7 +27,10 @@ export class ToysComponent implements OnInit {
       updatedAt:{
         title: 'Updated At'
       },
-      sellername:{
+      component:{
+        title: 'Store'
+      },
+      seller:{
         title: 'Seller Name'
       }
     }
@@ -39,7 +42,7 @@ export class ToysComponent implements OnInit {
   }
   onCreateCall(event){
        event.confirm.resolve(event.newData);
-       this.toysService.createEngy(event.newData.name, event.newData.price, event.newData.sellername).subscribe();
+       this.toysService.createEngy(event.newData.name, event.newData.price,event.newData.component,event.newData.seller).subscribe();
   }
   onEditCall(event){
        event.confirm.resolve(event.newData);

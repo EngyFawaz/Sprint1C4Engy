@@ -21,7 +21,7 @@ var ProductSchema = mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  sellername:{
+  seller:{
     type: String,
     trim: true,
     lowercase: true,
